@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/style/topbar.css">
+<div id="topbar">
+	<div id="links">
+		<a href="{{site.baseurl}}/example-studies">Examples</a>
+		<span>|</span>
+		<a href="{{site.baseurl}}/special-topics">Special Topics</a>
+		<span>|</span>
+		<a href="{{site.baseurl}}/reproducibility-resource-and-tools">Resources</a>
+		<span>|</span>
+		<a href="{{site.baseurl}}/">Home</a>
+	</div>
+	<div id="bar">
+		{% for i in (1..20) %}
+			<span> </span>
+		{% endfor %}
+	</div>
+</div>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>REPRODUCIBILITY FOR EVERYONE</title>
+	<link rel="stylesheet" type="text/css" href="/reproducibility-4-everybody/style/main.css">
+	<link rel="stylesheet" type="text/css" href="/reproducibility-4-everybody/style/highlighter.css">
+	<script type="text/javascript" src="/reproducibility-4-everybody/scripts/prefixfree.min.js"></script>
+</head>
+<body>
+
+	<link rel="stylesheet" type="text/css" href="/reproducibility-4-everybody/style/topbar.css">
+<div id="topbar">
+	<div id="links">
+		<a href="/reproducibility-4-everybody/example-studies">Examples</a>
+		<span>|</span>
+		<a href="/reproducibility-4-everybody/special-topics">Special Topics</a>
+		<span>|</span>
+		<a href="/reproducibility-4-everybody/reproducibility-resource-and-tools">Resources</a>
+		<span>|</span>
+		<a href="/reproducibility-4-everybody/">Home</a>
+	</div>
+	<div id="bar">
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+	</div>
+</div>
+
+
+	<h1>Reproducibility for Everyone</h1>
+
+	<img src="" alt="" > 
+
+	
+	<p><img src="images/elife-reproducibility-logo.png" alt="eLife Reproducibility Logo" /></p>
+
+<p>The “Reproducibility for Everyone” group was formed to consolidate expertise about reproducibility tools and best practices and provide that expertise to current researchers in the form of workshops, handouts, articles, posters and other materials. The group works to enable researchers not only to adopt best practices in reproducibility, but also to teach other researchers about reproducibility by giving them the means and contacts to organize their own reproducibility workshops.</p>
+
+<!-- ## RESOURCES -->
+<!-- * [API Design](/reproducibility-4-everybody/module/api_design) -->
+<!-- * [Reproducibility Resource & Tools](/reproducibility-4-everybody/reproducibility-resource-and-tools)  -->
+
+<h2 id="people">PEOPLE</h2>
+<ul>
+  <li>Bradly Alicea: <a href="https://bradly-alicea.weebly.com">OpenWorm Foundation</a></li>
+  <li>Peter Crisp: <a href="http://biology.anu.edu.au/people/peter-crisp">Australian National University</a></li>
+  <li>Diep Ganguly: <a href="http://biology.anu.edu.au/people/diep-ganguly">Australian National University</a></li>
+  <li>Helena Jambor: <a href="https://helenajambor.wordpress.com/eine-seite/">TU Dresden</a></li>
+  <li>Rintu Kutum: <a href="https://www.researchgate.net/profile/Rintu_Kutum">CSIR-Institute of Genomics &amp; Integrative Biology</a></li>
+  <li>Ian Man Ho Li: <a href="https://scholar.harvard.edu/mannstadt/people/ian-li">Harvard University</a></li>
+  <li>Sonali Roy: <a href="https://www.researchgate.net/profile/Sonali_Roy2">Noble Research Institute</a></li>
+  <li>Sarvenaz Sarabipour: <a href="https://www.researchgate.net/profile/Sarvenaz_Sarabipour">Johns Hopkins University</a></li>
+  <li>Benjamin Schwessinger: <a href="http://biology.anu.edu.au/people/benjamin-schwessinger">Australian National University</a></li>
+  <li>Tuan Tran: <a href="https://www.mayo.edu/research/faculty/weissgerber-tracey-l-ph-d/bio-20199363">Indiana University</a></li>
+</ul>
+
+
+	<link rel="stylesheet" type="text/css" href="/reproducibility-4-everybody/style/footer.css">
+<link rel="stylesheet" type="text/css" href="/reproducibility-4-everybody/style/footer-ref.css">
+<div id='footer'>
+	Supported by <a href="">ASPB</a>,
+	<a href="">Addgene</a>,
+	<a href="">Protocol.io</a>,
+	<a href="">eLife</a> and <a href="">CodeOcean</a>
+</div>
+<div id='footer-ref'>
+	This theme is adapted from Interactive Music by <a href="https://github.com/tambien/InteractiveMusic">Yotam Mann</a>
+</div>
+
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90915308-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+	<script type="text/javascript">
+
+	// jsfiddle creates too many AudioContexts, 
+	// need to insure that the offscreen fiddles are closed
+	// to remove the unused AudioContexts
+
+	function isOffScreen (el) {
+		var rect = el.getBoundingClientRect();
+		return ((rect.left + rect.width) < 0 
+			|| (rect.top + rect.height) < 0
+			|| (rect.left > window.innerWidth || rect.top > window.innerHeight))
+	}
+
+	function reloadIframe(iframe){
+		var url = iframe.src
+		iframe.src = 'about:blank'
+		setTimeout(function() {
+			iframe.src = url
+		}, 10)
+	}
+
+	//test the active elements to see if they are out of the viewport
+	setInterval(function(){
+		document.querySelectorAll('.active-iframe').forEach(function(el){
+			if (isOffScreen(el)){
+				reloadIframe(el)
+				el.classList.remove('active-iframe')
+			}
+		})
+	}, 1000)
+
+	window.addEventListener('message', function(e){
+		// if the results tab was selected
+		var resultsTab = e.data[0] === 'resultsFrame'
+		var slug = e.data[1].slug
+		// get the iframe element using the slug
+		document.querySelectorAll('iframe').forEach(function(iframe){
+			if (iframe.src.indexOf(slug) !== -1){
+				// mark the iframe as active if it's on the results tab
+				if (resultsTab){
+					iframe.classList.add('active-iframe')
+				}
+			}
+		})
+	})
+</script>
+</body>
+</html>

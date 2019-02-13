@@ -1,0 +1,18 @@
+body { position: relative; width: 90%; min-width: 310px; max-width: 900px; font-size: 18px; margin: 0px auto 30px auto; }
+
+h1, h2, h3, h4, h5 { font-family: sans-serif; margin-top: 30px; text-transform: uppercase; font-weight: normal; }
+
+p, li { margin-top: 30px; font-family: monospace; line-height: 1.5em; word-spacing: 0.15em; letter-spacing: 0.01em; }
+
+li { margin-top: 5px; margin-left: 30px; }
+
+blockquote, .highlight { background: #eee; border-radius: 10px; padding: 10px; margin: 0px; margin-top: 30px; }
+blockquote p, .highlight p { margin: 0px; }
+
+iframe, img { margin: 3px auto 3px auto; display: block; max-width: 40%; }
+
+a { text-decoration: none; color: #7F33ED; font-weight: bold; }
+a:hover { color: #ED33CF; }
+a:hover:active { color: #22DBC0; }
+
+code { background: #eee; padding: 2px 5px 2px 5px; }
