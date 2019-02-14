@@ -1,0 +1,25 @@
+sass:
+    sass_dir: style
+
+baseurl: '/reproducibility-4-everybody'
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+collections:
+    modules:
+      output: true
+      permalink: module/:path
+    pages:
+      output: true
+      permalink: :path
+
+exclude:
+  - .DS_Store
+  - Gemfile.lock
+  - node_modules
+  - images/original
+  - images/scripts

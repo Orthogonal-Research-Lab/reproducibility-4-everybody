@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>API DESIGN</title>
+	<link rel="stylesheet" type="text/css" href="/reproducibility-4-everybody/style/main.css">
+	<link rel="stylesheet" type="text/css" href="/reproducibility-4-everybody/style/highlighter.css">
+	<script type="text/javascript" src="/reproducibility-4-everybody/scripts/prefixfree.min.js"></script>
+</head>
+<body>
+
+	<link rel="stylesheet" type="text/css" href="/reproducibility-4-everybody/style/topbar.css">
+<div id="topbar">
+	<div id="links">
+		<a href="/reproducibility-4-everybody/example-studies">Examples</a>
+		<span>|</span>
+		<a href="/reproducibility-4-everybody/special-topics">Special Topics</a>
+		<span>|</span>
+		<a href="/reproducibility-4-everybody/reproducibility-resource-and-tools">Resources</a>
+		<span>|</span>
+		<a href="/reproducibility-4-everybody/">Home</a>
+	</div>
+	<div id="bar">
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+			<span> </span>
+		
+	</div>
+</div>
+
+
+	<h1>API Design</h1>
+
+	<img src="" alt="" > 
+
+	
+	<p>The purpose of an API is so that humans (like yourself) can understand your software. Javascript has no built in features which enforce public/private. It is pretty much entirely up to you as the software writer to create and hold onto a strict use of convention for defining public/private methods and variables.</p>
+
+<p>The purpose of public/private variables and methods is not about security or trust (though it can be sometimes), it is about managing complexity.</p>
+
+<p>As soon as your software grows past a certain size, it becomes too hard to remember all the methods and attributes that you’ve written. You need to start grouping functionality into logical units.</p>
+
+<p>Abstraction is your friend. It will enable you to build more expressive software more easily explore and iterate on.</p>
+
+<p>Abstract functionality and then trust that they do what they say they do (until they don’t). Build trust-worthy software and then trust your software. Jumping between layers of abstraction has a lot of mental overhead.</p>
+
+<h3 id="goals">Goals</h3>
+
+<p>Good APIs reveal high-level, powerful functionality and hide implementation details.</p>
+
+<p>Give yourself an <em>expressive</em> interface. A method like <code class="highlighter-rouge">setFunkiness(value)</code> is going to allow you to explore a lot of music without having to bother with how it’s implemented.</p>
+
+<p>Make it consistent.</p>
+
+<h2 id="oop">OOP</h2>
+
+<p>Object Oriented Programming is a way of designing applications by breaking down the functional components into “objects” each with their own state and functionality.</p>
+
+<p>In Javascript there are a few ways of doing OOP</p>
+
+<h3 id="function-objects">Function Objects</h3>
+
+<p>By convention, if you’re defining a class, use a capital letter and instances of that class will be lowercase or camelCase.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MyClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="c1">//this is where the constructor stuff of your class happens	</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="methods">Methods</h4>
+
+<p>Method’s are defined on the function’s prototype:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">MyClass</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">method</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">parameter</span><span class="p">){</span>
+	<span class="c1">//do something with the parameters</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="attributes">Attributes</h4>
+
+<p>Attributes are defined in the constructor and attached to <code class="highlighter-rouge">this</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/** @constructor */</span>
+<span class="kd">var</span> <span class="nx">MyClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">myAttribute</span> <span class="o">=</span> <span class="s2">"something Here"</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="this"><code class="highlighter-rouge">this</code></h4>
+
+<p>As we talked about last week, functions create scope. <code class="highlighter-rouge">this</code> always refers to the current scope.</p>
+
+<p>In the console scope, if you type <code class="highlighter-rouge">this</code>, it will return the current scope which in the browser is the <code class="highlighter-rouge">window</code>.</p>
+
+<p>Inside of a function or function object, <code class="highlighter-rouge">this</code> will refer to that object. If you attach attributes to <code class="highlighter-rouge">this</code>, those will be accessible from within the object using <code class="highlighter-rouge">this.attribute</code> or from outside the object using <code class="highlighter-rouge">yourObject.attribute</code>.</p>
+
+<h4 id="new"><code class="highlighter-rouge">new</code></h4>
+
+<p>The <code class="highlighter-rouge">new</code> operator causes the function to be called with <code class="highlighter-rouge">this</code> bound to a newly created Object, and whose <code class="highlighter-rouge">prototype</code> is bound to the function’s <code class="highlighter-rouge">prototype</code>.</p>
+
+<h3 id="prototypes">Prototypes</h3>
+
+<p>There are not very many popular prototype-based languages. Most languages are class-based.</p>
+
+<p>Prototype’s are attributes and methods which are shared to all objects which point to that prototype. The prototype is an object.</p>
+
+<p>Efficient : everyone shares the same reference to the object’s prototype. Good for runtime languages.</p>
+
+<h3 id="public">public</h3>
+
+<p>Public variables/methods are the ones that you want to expose to your software users (which is probably you most of the time). It’s good to comment these with what type of values these accept.</p>
+
+<h3 id="private">private</h3>
+
+<p>Private variables are specific to the implementation and are not supposed to be accessed from outside of the class or feature.</p>
+
+<p>As a convention, I prefix all my private variables and methods with an underscore.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">MyClass</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_privateMethod</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="c1">//do something internal	</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+
+	<link rel="stylesheet" type="text/css" href="/reproducibility-4-everybody/style/footer.css">
+<link rel="stylesheet" type="text/css" href="/reproducibility-4-everybody/style/footer-ref.css">
+<div id='footer'>
+	Supported by <a href="">ASPB</a>,
+	<a href="">Addgene</a>,
+	<a href="">Protocol.io</a>,
+	<a href="">eLife</a> and <a href="">CodeOcean</a>
+</div>
+<div id='footer-ref'>
+	This theme is adapted from Interactive Music by <a href="https://github.com/tambien/InteractiveMusic">Yotam Mann</a>
+</div>
+
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90915308-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+	<script type="text/javascript">
+
+	// jsfiddle creates too many AudioContexts, 
+	// need to insure that the offscreen fiddles are closed
+	// to remove the unused AudioContexts
+
+	function isOffScreen (el) {
+		var rect = el.getBoundingClientRect();
+		return ((rect.left + rect.width) < 0 
+			|| (rect.top + rect.height) < 0
+			|| (rect.left > window.innerWidth || rect.top > window.innerHeight))
+	}
+
+	function reloadIframe(iframe){
+		var url = iframe.src
+		iframe.src = 'about:blank'
+		setTimeout(function() {
+			iframe.src = url
+		}, 10)
+	}
+
+	//test the active elements to see if they are out of the viewport
+	setInterval(function(){
+		document.querySelectorAll('.active-iframe').forEach(function(el){
+			if (isOffScreen(el)){
+				reloadIframe(el)
+				el.classList.remove('active-iframe')
+			}
+		})
+	}, 1000)
+
+	window.addEventListener('message', function(e){
+		// if the results tab was selected
+		var resultsTab = e.data[0] === 'resultsFrame'
+		var slug = e.data[1].slug
+		// get the iframe element using the slug
+		document.querySelectorAll('iframe').forEach(function(iframe){
+			if (iframe.src.indexOf(slug) !== -1){
+				// mark the iframe as active if it's on the results tab
+				if (resultsTab){
+					iframe.classList.add('active-iframe')
+				}
+			}
+		})
+	})
+</script>
+</body>
+</html>
