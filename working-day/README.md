@@ -1,6 +1,6 @@
 ## Plan for working days, R4E group:  
 
-1) send out Doodle to find a "best fit" 24h period. This is meant to accomodate people across many timezones, so if you want to work with specific people, plan accordingly.  
+1) schedule a "best fit" 24h period. This is meant to accomodate people across many timezones, so if you want to work with specific people, plan accordingly.  
 
 * it is best practice to have a plan for what you would like to accomplish prior to the working day. Working days are meant to facilitate small group interactions and meaningful feedback.   
 
