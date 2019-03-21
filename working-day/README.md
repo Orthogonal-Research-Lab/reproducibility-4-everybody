@@ -10,7 +10,7 @@
 
 4) business can be conducted in the Slack team [reproducibilityws.slack.com](http://reproducibilityws.slack.com)  
 
-5) we will provide an availability schedule (see #2) and a Zoom meeting space to conduct business.  
+5) we will provide an availability schedule (see #2) and a virtual meeting space to conduct business.  
 
 6) although working days are meant to be of general interest, we expect specialty groups to be particularly active during this time. Those groups are:  
 
