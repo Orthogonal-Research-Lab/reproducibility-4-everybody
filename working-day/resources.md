@@ -6,4 +6,8 @@ Slack channels: #working-day and by subgroup.
 
 Public releases can be found on the [Open Science Framework (OSF)](http://osf.io).  
 
-Trello Board is located [here](https://trello.com/b/UWoKA4fv/mozilla-grant-working-group).  
+Trello board is located [here](https://trello.com/reproducibility4everyone).  
+
+
+
+
