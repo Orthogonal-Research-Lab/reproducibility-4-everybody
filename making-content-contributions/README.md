@@ -1,6 +1,6 @@
 ## How to make content contributions:  
 
-1) use[hypothes.is](https://web.hypothes.is/) to annotate web-based content.
+1) use [hypothes.is](https://web.hypothes.is/) to annotate web-based content.
 
 * make notes on the website pages themselves or make notes about how to utilize content for a specific workshop idea.
 
@@ -13,9 +13,9 @@
 
 * when finished, save as an image file (.jpg format).  
 
-* upload and push the image to the [Web Notes]() repository.
+* upload and push the image to the [Web Notes](https://github.com/Orthogonal-Research-Lab/reproducibility-4-everybody/tree/master/making-content-contributions/web-notes) repository.
 
 
-3) create a poster, workshop curriculum, or topical presentation.
+3) submit a poster, workshop curriculum, or topical presentation.
 
-* please join our [Slack community](http://reproducibilityws.slack.com) or make a pull request in the [New Content]() repository to submit your contribution.
+* please join our [Slack community](http://reproducibilityws.slack.com) or make a pull request in the [New Content](https://github.com/Orthogonal-Research-Lab/reproducibility-4-everybody/tree/master/making-content-contributions/new-content) repository to submit your contribution.
